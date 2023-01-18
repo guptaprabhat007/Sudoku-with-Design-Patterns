@@ -24,22 +24,22 @@ import javax.swing.text.DocumentFilter;
  */
 public class SudokuBoard {
 
-    private int[][] game; //Kullanıcıya sunulacak oyundaki verileri tutar.
-    private int[][] solution; //Kullanıcının ulaşmaya çalıştığı çözüm verilerini tutar.
-    private JTextField[][] fields; //Görsel şekilde kullanıcının verilerini gireceği her bir kutucuk.
-    private JFrame frame; //İlgili frame
-    private ButtonController buttonController; //GUI amacıyla ilgili button ve radioButton'ları oluşturup 
-                                                //frame'e eklememizi sağlayan ButtonController tipinde değişken
+    private int[][] game; //It keeps the data in the game that will be presented to the user.
+    private int[][] solution; //It holds the solution data that the user is trying to access.
+    private JTextField[][] fields; //Each tile in which the user will enter their data in a visual shape.
+    private JFrame frame; //Related frame
+    private ButtonController buttonController; //Create the corresponding buttons and radioButtons for GUI purposes, and
+                                                //variable of type ButtonController that allows us to add to the frame
 
-    public SudokuBoard() { //Nesnelerin yaratılmasını yapan ilgili yapıcı fonksiyon
+    public SudokuBoard() { //Related constructor function that makes the creation of objects
         game = new int[9][9];
         solution = new int[9][9];
-        buttonController = new ButtonController(this); //buttonController nesnesini yaratırken içinde bulunulan 
-                                                    //SudokuBoard'u parametre olarak yolluyoruz..
+        buttonController = new ButtonController(this); //Present when creating buttonController object 
+                                                    //We send SudokuBoard as a parameter..
 
     }
 
-    //fields üyesini döndüren metot
+    //Method that returns a field member
     public JTextField[][] getFields() {
         return fields;
     }
